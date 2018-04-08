@@ -1,5 +1,5 @@
 #include<stdio.h> 
- 
+
 int main() 
 { 
       int i, limit, total = 0, x, counter = 0, time_quantum,j; 
@@ -24,8 +24,7 @@ int main()
       printf("\nProcess ID\t\tBurst Time\t Turnaround Time\t Waiting Time\t Priority\n");
       for(total = 0, i = 0; x != 0;) 
       { 
-
-		    for(z=0;z<limit;z++)
+            for(z=0;z<limit;z++)
 		    {
 			int temp1;
 			pos=z;
@@ -55,12 +54,7 @@ int main()
 			temp[z]=temp[pos];
 			temp[pos]=temp1;
 		    }
-		for(z=0;z<limit;z++)
-		{
-		printf("P[%d] Burst=%d Prio=%d\n",p[z],burst_time[z],prio[z]);
-		}
-      printf("%d\n",i+1);
-            if(temp[i] <= time_quantum && temp[i] > 0) 
+		if(temp[i] <= time_quantum && temp[i] > 0) 
             { 
                   total = total + temp[i]; 
                   temp[i] = 0; 
@@ -81,7 +75,7 @@ int main()
             if(temp[i] == 0 && counter == 1) 
             { 
                   x--; 
-                  printf("\nProcess[%d]\t\t%d\t\t %d\t\t\t %d\t\t%d", p[i], burst_time[i], total - arrival_time[i], total - arrival_time[i] - burst_time[i],prio[i]);
+                  printf("\nProcess[%d]\t\t%d\t\t %d\t\t\t %d\t\t\t %d", p[i], burst_time[i], total - arrival_time[i], total - arrival_time[i] - burst_time[i],prio[i]);
                   wait_time = wait_time + total - arrival_time[i] - burst_time[i]; 
                   turnaround_time = turnaround_time + total - arrival_time[i]; 
                   counter = 0; 
@@ -99,9 +93,7 @@ int main()
             {
                   i = 0;
             }
-		
-		
-      } 
+	} 
       average_wait_time = wait_time * 1.0 / limit;
       average_turnaround_time = turnaround_time * 1.0 / limit;
       printf("\n\nAverage Waiting Time:\t%f", average_wait_time); 
